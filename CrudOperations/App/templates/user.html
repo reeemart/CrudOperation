@@ -1,0 +1,44 @@
+﻿<div class="row" style="text-align:center;">
+    <div class="col-lg-6">
+        <div class="form-group pull-left">
+            <h2>User</h2>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group pull-right">
+            <br />
+            <a href="#/adduser" class="btn btn-primary">Create new</a>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        List of users
+    </div>
+    <div class="panel-body">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Names</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in users">
+                    <td>{{i.Name}}</td>
+                    <td>
+                        <a href="#/edituser/{{i.Id}}">Edit</a> |
+                        <a href="" ng-click="deleteUser(i.Id)">Delete</a> |
+                        <a href="#/viewuser/{{i.Id}}">View</a>
+                    </td>
+                </tr>
+                <tr ng-if="!users || users.length == 0">
+                    <td colspan="4" style="text-align:center">
+                        No user data to displays
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
